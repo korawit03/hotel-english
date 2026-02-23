@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Hotel English – Staff Training</title>
+
+         <style>
+                  * {
+                           box-sizing: border-box
+                  }
+
+                  body {
+                           margin: 0;
+                           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+                           background:
+                                    radial-gradient(circle at top left, rgba(255, 255, 255, .08), transparent 40%),
+                                    radial-gradient(circle at bottom right, rgba(0, 0, 0, .15), transparent 40%),
+                                    linear-gradient(180deg, #2788ab, #606c6f);
+                  }
+
+                  /* HEADER */
+                  .header {
+                           padding: 38px 22px 34px;
+                           color: #ffffff;
+                           background:
+                                    linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, 0));
+                  }
+
+                  .header h1 {
+                           margin: 0;
+                           font-size: 30px;
+                           font-weight: 700;
+                  }
+
+                  .header h1::after {
+                           content: "";
+                           display: block;
+                           width: 200px;
+                           height: 4px;
+                           background: #C9A24D;
+                           border-radius: 2px;
+                           margin-top: 10px;
+                  }
+
+                  .header p {
+                           margin: 6px 0 0;
+                           font-size: 14px;
+                           opacity: .9;
+                  }
+
+                  /* CONTENT */
+                  .content::before {
+                           content: "";
+                           display: block;
+                           width: 60px;
+                           height: 6px;
+                           background: #c1bfbf;
+                           border-radius: 3px;
+                           margin: 0 auto 14px;
+                  }
+
+                  .content {
+                           background: #ffffff;
+                           border-radius: 30px 30px 0 0;
+                           padding: 22px;
+                           min-height: 100vh;
+                  }
+
+                  /* MENU */
+                  .menu {
+                           background: linear-gradient(180deg, #ffffff, #F9F9F6);
+                           border-radius: 22px;
+                           padding: 20px;
+                           margin-bottom: 14px;
+                           font-size: 17px;
+                           font-weight: 600;
+                           color: #1F3D2B;
+                           box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+                           display: flex;
+                           justify-content: space-between;
+                           align-items: center;
+                  }
+
+                  .menu::after {
+                           content: "›";
+                           font-size: 22px;
+                           color: #C9A24D;
+                  }
+
+                  .menu:active {
+                           transform: scale(.97)
+                  }
+
+                  /* BACK */
+                  .back {
+                           color: #1F6F8B;
+                           font-weight: 500;
+                           margin-bottom: 12px;
+                  }
+
+                  /* TOPIC */
+                  .topic-title {
+                           font-size: 22px;
+                           font-weight: 700;
+                           color: #1F3D2B;
+                  }
+
+                  .topic-sub {
+                           font-size: 14px;
+                           color: #666;
+                           margin-bottom: 16px;
+                  }
+
+                  /* CARD */
+                  .card {
+                           background:
+                                    linear-gradient(180deg, #ffffff, #FAFAF7);
+                           border-radius: 22px;
+                           padding: 18px;
+                           margin-bottom: 14px;
+                           box-shadow: 0 8px 18px rgba(0, 0, 0, .1);
+                           transition: .25s;
+                  }
+
+                  .card.active {
+                           background:
+                                    linear-gradient(180deg, #FFF6DE, #FFFDF6);
+                           border: 2px solid #C9A24D;
+                           box-shadow: 0 10px 24px rgba(201, 162, 77, .35);
+                  }
+
+                  /* NUMBER */
+                  .num {
+                           width: 32px;
+                           height: 32px;
+                           border-radius: 50%;
+                           background: #C9A24D;
+                           color: #ffffff;
+                           display: flex;
+                           align-items: center;
+                           justify-content: center;
+                           font-weight: 700;
+                           font-size: 14px;
+                  }
+
+                  /* TEXT */
+                  .en {
+                           margin-top: 10px;
+                           font-size: 16px;
+                           font-weight: 600;
+                           color: #1F3D2B;
+                  }
+
+                  .hr {
+                           height: 1px;
+                           background: #E0E0E0;
+                           margin: 10px 0;
+                  }
+
+                  .th {
+                           font-size: 15px;
+                           color: #333333;
+                  }
+         </style>
+</head>
+
+<body>
+
+         <div class="header">
+                  <h1>Hotel English</h1>
+                  <p>Staff Training</p>
+         </div>
+
+         <div class="content">
+
+                  <!-- HOME -->
+                  <div id="home">
+                           <div class="menu" onclick="openPage('Welcoming Guests')">Welcoming Guests</div>
+                           <div class="menu" onclick="openPage('Seating the Guests')">Seating the Guests</div>
+                           <div class="menu" onclick="openPage('Beginning Service')">Beginning Service</div>
+                           <div class="menu" onclick="openPage('Taking Orders')">Taking Orders</div>
+                           <div class="menu" onclick="openPage('Serving Food & Drinks')">Serving Food & Drinks</div>
+                           <div class="menu" onclick="openPage('Billing & Payment')">Billing & Payment</div>
+                  </div>
+
+                  <!-- Welcoming Guests PAGE -->
+                  <div id="Welcoming Guests" class="page" style="display:none">
+                           <div class="back" onclick="goHome()">← Back</div>
+                           <div class="topic-title">Welcoming Guests</div>
+                           <div class="topic-sub">การต้อนรับ</div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">01</div>
+                                    <div class="en">Good morning / afternoon / evening. Welcome to our restaurant.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">สวัสดีค่ะ/ครับ ยินดีต้อนรับสู่ห้องอาหารของเรา</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">02</div>
+                                    <div class="en">It’s a pleasure to have you with us today.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ยินดีที่ได้ต้อนรับคุณในวันนี้ค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">03</div>
+                                    <div class="en">Welcome back. We’re delighted to see you again.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ยินดีต้อนรับกลับค่ะ/ครับ ดีใจที่ได้พบคุณอีกครั้ง</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">04</div>
+                                    <div class="en">Thank you for choosing to dine with us.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอบคุณที่เลือกใช้บริการห้องอาหารของเราค่ะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">05</div>
+                                    <div class="en">Do you have a reservation?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ได้ทำการจองโต๊ะไว้หรือไม่คะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">06</div>
+                                    <div class="en">May I have your name for the reservation?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอทราบชื่อที่ใช้จองโต๊ะได้ไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">07</div>
+                                    <div class="en">How many people are in your party?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">มากันทั้งหมดกี่ท่านคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">08</div>
+                                    <div class="en">Let me check your reservation.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขออนุญาตตรวจสอบการจองสักครู่นะคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">09</div>
+                                    <div class="en">I’m sorry, we don’t seem to have a reservation under that name.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขออภัยค่ะ/ครับ ไม่พบรายการจองในชื่อนี้</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">10</div>
+                                    <div class="en">Would you like to wait for a table?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ต้องการรอคิวสำหรับโต๊ะไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">11</div>
+                                    <div class="en">The waiting time is approximately 15–20 minutes.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ระยะเวลารอประมาณ 15–20 นาทีค่ะ/ครับ</div>
+                           </div>
+                  </div>
+
+                  <!-- Seating the Guests PAGE -->
+                  <div id="Seating the Guests" class="page" style="display:none">
+                           <div class="back" onclick="goHome()">← Back</div>
+                           <div class="topic-title">Seating the Guests</div>
+                           <div class="topic-sub">การพาไปที่โต๊ะ</div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">01</div>
+                                    <div class="en">This way, please.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">เชิญทางนี้ค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">02</div>
+                                    <div class="en">I’ll take you to your table.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ดิฉัน/ผมจะพาไปที่โต๊ะค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">03</div>
+                                    <div class="en">Please watch your step.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ระวังขั้นบันไดด้วยค่ะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">04</div>
+                                    <div class="en">Here is your table.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">โต๊ะของคุณอยู่ทางนี้ค่ะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">05</div>
+                                    <div class="en">Would you prefer a table indoors or outdoors?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ต้องการนั่งด้านในหรือด้านนอกคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">06</div>
+                                    <div class="en"> Would you like a window seat?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ต้องการที่นั่งติดหน้าต่างไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">07</div>
+                                    <div class="en">Is this table alright for you?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">โต๊ะนี้สะดวกไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">08</div>
+                                    <div class="en">Please have a seat.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">เชิญนั่งค่ะ/ครับ</div>
+                           </div>
+                  </div>
+
+                  <!-- Beginning Service PAGE -->
+                  <div id="Beginning Service" class="page" style="display:none">
+                           <div class="back" onclick="goHome()">← Back</div>
+                           <div class="topic-title">Beginning Service</div>
+                           <div class="topic-sub">เริ่มต้นบริการที่โต๊ะ</div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">01</div>
+                                    <div class="en">Here is the menu.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">นี่คือเมนูค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">02</div>
+                                    <div class="en">Allow me to introduce our special menu for today.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอแนะนำเมนูพิเศษประจำวันนี้ค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">03</div>
+                                    <div class="en">Would you like still or sparkling water?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">รับน้ำเปล่าหรือน้ำแร่แบบมีฟองคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">04</div>
+                                    <div class="en">May I offer you something to drink first?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอแนะนำเครื่องดื่มก่อนดีไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">05</div>
+                                    <div class="en">Our server will be with you shortly.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">พนักงานจะมารับออเดอร์ในอีกสักครู่ค่ะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">06</div>
+                                    <div class="en">Are you celebrating a special occasion today?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">วันนี้มีโอกาสพิเศษอะไรไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">07</div>
+                                    <div class="en">Please let me know if you need anything.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">หากต้องการความช่วยเหลือ แจ้งได้เลยนะคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">08</div>
+                                    <div class="en">Take your time.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">เชิญตามสบายค่ะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">09</div>
+                                    <div class="en">Let me repeat your order.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอทวนรายการอาหารนะคะ/ครับ</div>
+                           </div>
+                  </div>
+
+                  <!-- Taking Orders PAGE -->
+                  <div id="Taking Orders" class="page" style="display:none">
+                           <div class="back" onclick="goHome()">← Back</div>
+                           <div class="topic-title">Taking Orders</div>
+                           <div class="topic-sub">การรับออเดอร์</div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">01</div>
+                                    <div class="en">Are you ready to order?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">พร้อมสั่งอาหารหรือยังคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">02</div>
+                                    <div class="en">May I take your order?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอรับออเดอร์ได้ไหมคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">03</div>
+                                    <div class="en">Would you like a few more minutes?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ต้องการเวลาเพิ่มอีกสักครู่ไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">04</div>
+                                    <div class="en">Please take your time.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">เชิญเลือกตามสบายค่ะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">05</div>
+                                    <div class="en">What would you like to start with?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ต้องการเริ่มต้นด้วยอะไรดีคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">06</div>
+                                    <div class="en">Can I recommend something for you?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขออนุญาตแนะนำเมนูให้ไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">07</div>
+                                    <div class="en">Would you like any appetizers?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">รับอาหารเรียกน้ำย่อยไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">08</div>
+                                    <div class="en">Would you like soup or salad with that?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">รับซุปหรือสลัดเพิ่มไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">09</div>
+                                    <div class="en">Would you like a side dish?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">รับเครื่องเคียงเพิ่มไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">10</div>
+                                    <div class="en">How would you like your steak? (Rare / Medium / Well done)</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ต้องการสเต๊กสุกระดับไหน (สุกน้อย / ปานกลาง / สุกมาก)</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">11</div>
+                                    <div class="en">Would you like that spicy?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ต้องการรสเผ็ดไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">12</div>
+                                    <div class="en">Would you like something to drink?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">รับเครื่องดื่มอะไรไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">13</div>
+                                    <div class="en">Still or sparkling water?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">น้ำเปล่าหรือน้ำแร่แบบมีฟองคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">14</div>
+                                    <div class="en">Would you like ice with that?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">รับน้ำแข็งไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">15</div>
+                                    <div class="en">Would you care for wine or a cocktail?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">สนใจไวน์หรือค็อกเทลไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">16</div>
+                                    <div class="en">Would you like a refill?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ต้องการเติมเครื่องดื่มเพิ่มไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">17</div>
+                                    <div class="en">Would you like less sugar?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ต้องการหวานน้อยไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">18</div>
+                                    <div class="en">Any allergies or dietary restrictions?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">มีอาการแพ้อาหารหรือข้อจำกัดด้านอาหารไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">19</div>
+                                    <div class="en">Would you like it served separately or together?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ต้องการให้เสิร์ฟพร้อมกันหรือแยกเสิร์ฟคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">20</div>
+                                    <div class="en">Anything else?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">รับอย่างอื่นเพิ่มไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">21</div>
+                                    <div class="en">Is that all for now?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">เท่านี้ก่อนใช่ไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">22</div>
+                                    <div class="en">Let me repeat your order.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอทวนรายการอาหารนะคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">23</div>
+                                    <div class="en">You ordered one grilled salmon and one Caesar salad. Is that correct?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">คุณสั่งปลาแซลมอนย่าง 1 ที่ และซีซาร์สลัด 1 ที่ ถูกต้องไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">24</div>
+                                    <div class="en">Your food will be served shortly.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">อาหารจะเสิร์ฟในอีกสักครู่ค่ะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">25</div>
+                                    <div class="en">Thank you. Please enjoy your meal.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอบคุณค่ะ/ครับ ขอให้รับประทานให้อร่อยนะคะ/ครับ</div>
+                           </div>
+                  </div>
+
+                  <!-- Serving Food & Drinks PAGE -->
+                  <div id="Serving Food & Drinks" class="page" style="display:none">
+                           <div class="back" onclick="goHome()">← Back</div>
+                           <div class="topic-title">Serving Food & Drinks</div>
+                           <div class="topic-sub">เสิร์ฟอาหาร</div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">01</div>
+                                    <div class="en">Here is your order.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">นี่คืออาหารของคุณค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">02</div>
+                                    <div class="en">Enjoy your meal.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอให้อร่อยนะคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">03</div>
+                                    <div class="en">Be careful, the plate is hot.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ระวังจานร้อนค่ะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">04</div>
+                                    <div class="en">Is everything okay?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ทุกอย่างเรียบร้อยดีไหมคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">05</div>
+                                    <div class="en">How is your food?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">อาหารเป็นอย่างไรบ้างคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">06</div>
+                                    <div class="en">May I clear the table?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขออนุญาตเก็บจานนะคะ/ครับ</div>
+                           </div>
+                  </div>
+
+                  <!-- Billing & Payment PAGE -->
+                  <div id="Billing & Payment" class="page" style="display:none">
+                           <div class="back" onclick="goHome()">← Back</div>
+                           <div class="topic-title">Billing & Payment</div>
+                           <div class="topic-sub">คิดเงิน</div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">01</div>
+                                    <div class="en">Would you like the bill?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ต้องการเช็คบิลไหมคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">02</div>
+                                    <div class="en">Here is your bill.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">นี่คือใบเสร็จของคุณค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">03</div>
+                                    <div class="en">How would you like to pay?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">จะชำระเงินแบบไหนคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">04</div>
+                                    <div class="en">Cash or credit card?</div>
+                                    <div class="hr"></div>
+                                    <div class="th">เงินสดหรือบัตรเครดิตคะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">05</div>
+                                    <div class="en">Please sign here.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">กรุณาเซ็นชื่อที่นี่ค่ะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">06</div>
+                                    <div class="en">Here is your receipt.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">นี่คือใบเสร็จรับเงินค่ะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">07</div>
+                                    <div class="en">Thank you very much.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอบคุณมากค่ะ/ครับ</div>
+                           </div>
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">08</div>
+                                    <div class="en">We hope to see you again.</div>
+                                    <div class="hr"></div>
+                                    <div class="th">หวังว่าจะได้ต้อนรับคุณอีกครั้งค่ะ/ครับ</div>
+                           </div>
+                  </div>
+         </div>
+
+         <script>
+                  function openPage(id) {
+                           // ซ่อนทุกหน้า
+                           document.querySelectorAll('#home, .page').forEach(p => {
+                                    p.style.display = 'none';
+                           });
+
+                           // แสดงหน้าที่เลือก
+                           document.getElementById(id).style.display = 'block';
+                  }
+
+                  function goHome() {
+                           // ซ่อนทุกหน้า
+                           document.querySelectorAll('.page').forEach(p => {
+                                    p.style.display = 'none';
+                           });
+
+                           // แสดงหน้า home
+                           document.getElementById('home').style.display = 'block';
+                  }
+
+                  function toggle(el) {
+                           el.classList.toggle('active');
+                  }
+         </script>
+
+</body>
+
+</html>
