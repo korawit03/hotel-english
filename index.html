@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Hotel English – Staff Training</title>
+
+         <style>
+                  * {
+                           box-sizing: border-box
+                  }
+
+                  body {
+                           margin: 0;
+                           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+                           background:
+                                    radial-gradient(circle at top left, rgba(255, 255, 255, .08), transparent 40%),
+                                    radial-gradient(circle at bottom right, rgba(0, 0, 0, .15), transparent 40%),
+                                    linear-gradient(180deg, #2788ab, #606c6f);
+                  }
+
+                  /* HEADER */
+                  .header {
+                           padding: 38px 22px 34px;
+                           color: #ffffff;
+                           background:
+                                    linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, 0));
+                  }
+
+                  .header h1 {
+                           margin: 0;
+                           font-size: 30px;
+                           font-weight: 700;
+                  }
+
+                  .header h1::after {
+                           content: "";
+                           display: block;
+                           width: 200px;
+                           height: 4px;
+                           background: #C9A24D;
+                           border-radius: 2px;
+                           margin-top: 10px;
+                  }
+
+                  .header p {
+                           margin: 6px 0 0;
+                           font-size: 14px;
+                           opacity: .9;
+                  }
+
+                  /* CONTENT */
+                  .content::before {
+                           content: "";
+                           display: block;
+                           width: 60px;
+                           height: 6px;
+                           background: #c1bfbf;
+                           border-radius: 3px;
+                           margin: 0 auto 14px;
+                  }
+
+                  .content {
+                           background: #ffffff;
+                           border-radius: 30px 30px 0 0;
+                           padding: 22px;
+                           min-height: 100vh;
+                  }
+
+                  /* MENU */
+                  .menu {
+                           background: linear-gradient(180deg, #ffffff, #F9F9F6);
+                           border-radius: 22px;
+                           padding: 20px;
+                           margin-bottom: 14px;
+                           font-size: 17px;
+                           font-weight: 600;
+                           color: #1F3D2B;
+                           box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+                           display: flex;
+                           justify-content: space-between;
+                           align-items: center;
+                  }
+
+                  .menu::after {
+                           content: "›";
+                           font-size: 22px;
+                           color: #C9A24D;
+                  }
+
+                  .menu:active {
+                           transform: scale(.97)
+                  }
+
+                  /* BACK */
+                  .back {
+                           color: #1F6F8B;
+                           font-weight: 500;
+                           margin-bottom: 12px;
+                  }
+
+                  /* TOPIC */
+                  .topic-title {
+                           font-size: 22px;
+                           font-weight: 700;
+                           color: #1F3D2B;
+                  }
+
+                  .topic-sub {
+                           font-size: 14px;
+                           color: #666;
+                           margin-bottom: 16px;
+                  }
+
+                  /* CARD */
+                  .card {
+                           background:
+                                    linear-gradient(180deg, #ffffff, #FAFAF7);
+                           border-radius: 22px;
+                           padding: 18px;
+                           margin-bottom: 14px;
+                           box-shadow: 0 8px 18px rgba(0, 0, 0, .1);
+                           transition: .25s;
+                  }
+
+                  /* NUMBER */
+                  .num {
+                           width: 32px;
+                           height: 32px;
+                           border-radius: 50%;
+                           background: #C9A24D;
+                           color: #ffffff;
+                           display: flex;
+                           align-items: center;
+                           justify-content: center;
+                           font-weight: 700;
+                           font-size: 14px;
+                  }
+
+                  /* TEXT */
+                  .en {
+                           margin-top: 10px;
+                           font-size: 16px;
+                           font-weight: 600;
+                           color: #1F3D2B;
+                  }
+
+                  .hr {
+                           height: 1px;
+                           background: #E0E0E0;
+                           margin: 10px 0;
+                  }
+
+                  .th {
+                           font-size: 15px;
+                           color: #333333;
+                  }
+         </style>
+</head>
+
+<body>
+
+         <div class="header">
+                  <h1>Hotel English</h1>
+                  <p>Staff Training</p>
+         </div>
+
+         <div class="content">
+
+                  <!-- HOME -->
+                  <div id="home">
+                           <div class="menu" onclick="openPage('Welcoming Guests')">Welcoming Guests</div>
+                           <div class="menu" onclick="openPage('Seating the Guests')">Seating the Guests</div>
+                           <div class="menu" onclick="openPage('Beginning Service')">Beginning Service</div>
+                           <div class="menu" onclick="openPage('Taking Orders')">Taking Orders</div>
+                           <div class="menu" onclick="openPage('Serving Food & Drinks')">Serving Food & Drinks</div>
+                           <div class="menu" onclick="openPage('Billing & Payment')">Billing & Payment</div>
+                  </div>
+
+                  <!-- Welcoming Guests PAGE -->
+                  <div id="Welcoming Guests" class="page" style="display:none">
+                           <div class="back" onclick="goHome()">← Back</div>
+                           <div class="topic-title">Welcoming Guests</div>
+                           <div class="topic-sub">การต้อนรับ</div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">01</div>
+                                    <div class="en">Good morning afternoon evening. Welcome to our restaurant.<br>
+                                             🔊 (กู๊ด มอร์-นิ่ง / อาฟ-เทอะ-นูน / อีฟ-นิ่ง เวล-คัม ทู อาว
+                                             เรส-เทอ-รอง)<br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio1').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio1" src="sound_eng/1/goodmorning.mp3"></audio><br> -->
+
+                                             早上好 下午好 晚上好，欢迎来到我们的餐厅。<br>
+                                             🔊 (Zǎoshang hǎo / Xiàwǔ hǎo / Wǎnshàng hǎo, huānyíng láidào wǒmen de
+                                             cāntīng.) <br>
+                                             <!-- <button onclick="document.getElementById('audio2').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio2" src="sound_cn/1/Zǎoshang hǎo  Xiàwǔ hǎo  Wǎnshàng hǎo, huānyíng láidào wǒmen de cāntīng..mp3"></audio><br> -->
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">สวัสดีค่ะ/ครับ ยินดีต้อนรับสู่ห้องอาหารของเรา</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">02</div>
+                                    <div class="en">Do you have a reservation?<br>
+                                             🔊 (ดู ยู แฮฟ อะ เร-เซอ-เว-ชั่น)<br>
+                                             <!-- ไฟล์เสียง
+                                             <button onclick="document.getElementById('audio3').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio3" src="sound_eng/1/Do you have a reservation.mp3"></audio><br> -->
+
+                                             请问您有预订吗？<br>
+                                             🔊 (Qǐngwèn nín yǒu yùdìng ma?) <br>
+                                             <!-- <button onclick="document.getElementById('audio4').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio4" src="sound_cn/1/Qǐngwèn nín yǒu yùdìng ma.mp3"></audio><br> -->
+                                    </div>
+
+                                    <div class="hr"></div>
+                                    <div class="th">ได้จองโต๊ะไว้ไหมคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">03</div>
+                                    <div class="en">May I have your name for the reservation?<br>
+                                             🔊 (เมย์ ไอ แฮฟ ยัวร์ เนม ฟอร์ เดอะ เร-เซอ-เว-ชั่น)<br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio5').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio5"
+                                                      src="sound_eng/1/May I have your name for the reservation.mp3"></audio><br> -->
+
+                                             可以告诉我预订的姓名吗？<br>
+                                             🔊 (Kěyǐ gàosù wǒ yùdìng de xìngmíng ma?) <br>
+                                             <!-- <button onclick="document.getElementById('audio6').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio6" src="sound_cn/1/Kěyǐ gàosù wǒ yùdìng de xìngmíng ma.mp3"></audio><br> -->
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอทราบชื่อที่ใช้จองได้ไหมคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">04</div>
+                                    <div class="en">Let me check your reservation.<br>
+                                             🔊 (เล็ท มี เช็ค ยัวร์ เร-เซอ-เว-ชั่น)<br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio7').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio7" src="sound_eng/1/Let me check your reservation..mp3"></audio><br> -->
+
+                                             请稍等，我帮您查询预订。<br>
+                                             🔊 (Qǐng shāoděng, wǒ bāng nín cháxún yùdìng.) <br>
+                                             <!-- <button onclick="document.getElementById('audio8').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio8" src="sound_cn/1/Qǐng shāoděng, wǒ bāng nín cháxún yùdìng..mp3"></audio><br> -->
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขออนุญาตตรวจสอบการจองค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">05</div>
+                                    <div class="en">At the moment, all our tables are fully occupied. There will be
+                                             approximately a 20-minute wait. Would you be comfortable waiting?<br>
+                                             🔊 (แอท เดอะ โม-เมนท์ ออล อาว เท-เบิลส์ อาร์ ฟูล-ลี่ ออค-คิว-พายด์…)<br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio9').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio9"
+                                                      src="sound_eng/1/At the moment, all our tables are fully occupied. There will be.mp3"></audio><br> -->
+
+                                             目前所有座位已满，大约需要等二十分钟，请问您方便等候吗？<br>
+                                             🔊 (Mùqián suǒyǒu zuòwèi yǐ mǎn, dàyuē xūyào děng èrshí fēnzhōng, qǐngwèn
+                                             nín fāngbiàn děnghòu ma?) <br>
+                                             <!-- <button onclick="document.getElementById('audio10').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio10" src="sound_cn/1/Mùqián suǒyǒu zuòwèi yǐ mǎn, dàyuē xūyào děng èrshí fēnzhōng, qǐngwèn nín fāngbiàn děnghòu ma.mp3"></audio><br> -->
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ตอนนี้โต๊ะเต็ม อาจต้องรอประมาณ 20 นาที สะดวกรอไหมคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">06</div>
+                                    <div class="en">We have another restaurant called Beach Grill. We would be delighted
+                                             to recommend it.<br>
+                                             🔊 (วี แฮฟ อะ-นัด-เธอะ เรส-เทอ-รอง คอลด์ บีช กริล…)<br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio11').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio11"
+                                                      src="sound_eng/1/We have another restaurant called Beach Grill. We would be delighted.mp3"></audio><br> -->
+
+                                             我们还有另一家餐厅叫 Beach Grill，很乐意为您推荐。<br>
+                                             🔊 (Wǒmen hái yǒu lìng yī jiā cāntīng jiào Beach Grill, hěn lèyì wèi nín tuījiàn.) <br>
+                                             <!-- <button onclick="document.getElementById('audio12').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio12" src="sound_cn/1/Wǒmen hái yǒu lìng yī jiā cāntīng jiào Beach Grill, hěn lèyì wèi nín tuījiàn..mp3"></audio><br> -->
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">เรามีอีกห้องอาหารชื่อ Beach Grill ยินดีแนะนำค่ะ/ครับ</div>
+                           </div>
+                  </div>
+
+                  <!-- Seating the Guests PAGE -->
+                  <div id="Seating the Guests" class="page" style="display:none">
+                           <div class="back" onclick="goHome()">← Back</div>
+                           <div class="topic-title">Seating the Guests</div>
+                           <div class="topic-sub">การพาไปที่โต๊ะ</div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">01</div>
+                                    <div class="en">
+                                             This way, please.<br>
+                                             🔊 (ดิส เวย์ พลีส)<br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio13').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio13" src="sound_eng/2/This way, please..mp3"></audio><br> -->
+                                             这边请。<br>
+                                             🔊 (Zhè biān qǐng.) <br>
+                                             <!-- <button onclick="document.getElementById('audio14').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio14" src="sound_eng/2/"></audio><br> -->
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">เชิญทางนี้ค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">02</div>
+                                    <div class="en">
+                                             How many guests are in your party?<br>
+                                             🔊 (ฮาว เมนนี่ เกสต์ส อาร์ อิน ยัวร์ พาร์-ตี้)<br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio15').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio15" src="sound_eng/2/How many guests are in your party.mp3"></audio><br> -->
+                                             请问一共几位？<br>
+                                             🔊 (Qǐngwèn yígòng jǐ wèi?) <br>    
+                                             <!-- <button onclick="document.getElementById('audio16').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio16" src=""></audio><br> -->
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">มากันกี่ท่านคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">03</div>
+                                    <div class="en">
+                                             We would be happy to arrange tables together for your comfort.<br>
+                                             🔊 (วี วูด บี แฮป-ปี้ ทู อะ-เรนจ์ เท-เบิลส์ ทู-เก-เธอะ)<br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio17').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio17" src="sound_eng/2/We would be happy to arrange tables together for your comfort..mp3"></audio><br> -->
+                                             我们可以为您安排拼桌。<br>
+                                             🔊 (Wǒmen kěyǐ wèi nín ānpái pīn zhuō.) <br>
+                                             <!-- <button onclick="document.getElementById('audio18').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio18" src=""></audio><br> -->
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">สามารถจัดโต๊ะต่อกันให้ได้ค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">04</div>
+                                    <div class="en">
+                                             Would you be comfortable being seated at separate tables for now?<br>
+                                             🔊 (วูด ยู บี คัม-เฟอะ-เทอะ-เบิล บีอิง ซี-ทิด แอท เซพ-พะ-เรท เท-เบิลส์ ฟอร์-เนา)<br>ห
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio19').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio19" src="sound_eng/2/Would you be comfortable being seated at separate tables for now.mp3"></audio><br> -->
+                                             目前只能分开入座，请问可以吗？<br>
+                                             🔊 (Mùqián zhǐnéng fēnkāi rùzuò, qǐngwèn kěyǐ ma?) <br>
+                                             <!-- <button onclick="document.getElementById('audio20').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio20" src=""></audio><br> -->
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">สะดวกนั่งแยกโต๊ะไหมคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">05</div>
+                                    <div class="en">
+                                             Please have a seat.<br>
+                                             🔊 (พลีส แฮฟ อะ ซีท)<br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio21').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio21" src="sound_eng/2/Please have a seat..mp3"></audio><br> -->
+                                             请坐。<br>
+                                             🔊 (Qǐng zuò.) <br>
+                                             <!-- <button onclick="document.getElementById('audio22').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio22" src=""></audio><br> -->
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">เชิญนั่งค่ะ/ครับ</div>
+                           </div>
+                  </div>
+
+                  <!-- Beginning Service PAGE -->
+                  <div id="Beginning Service" class="page" style="display:none">
+                           <div class="back" onclick="goHome()">← Back</div>
+                           <div class="topic-title">Beginning Service</div>
+                           <div class="topic-sub">เริ่มต้นบริการที่โต๊ะ</div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">01</div>
+                                    <div class="en">
+                                             Here is the menu.<br>
+                                             🔊 (เฮียร์ อิส เดอะ เมนู)<br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio23').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio23" src="sound_eng/3/Here is the menu..mp3"></audio><br> -->
+                                             这是菜单。<br>
+                                             🔊 (Zhè shì càidān.) <br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio24').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio24" src=""></audio><br> -->
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">นี่คือเมนูค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">02</div>
+                                    <div class="en">
+                                             Allow me to introduce today’s special.<br>
+                                             🔊 (อะ-เลา มี ทู อิน-โทร-ดิวซ์ ทู-เดย์ส สเป-เชิล)<br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio25').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio25" src="sound_eng/3/Allow me to introduce today’s special..mp3"></audio><br> -->
+                                             请让我为您介绍今日推荐。<br>
+                                             🔊 (Qǐng ràng wǒ wèi nín jièshào jīnrì tuījiàn.) <br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio26').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio26" src=""></audio><br> -->
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอแนะนำเมนูพิเศษวันนี้ค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">03</div>
+                                    <div class="en">
+                                             Would you like still or sparkling water?<br>
+                                             🔊 (วูด ยู ไลค์ สติล ออร์ สปาร์ค-กลิง วอ-เทอะ)<br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio27').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio27" src="sound_eng/3/Would you like still or sparkling water.mp3"></audio><br> -->
+                                             请问您要矿泉水还是气泡水？<br>
+                                             🔊 (Qǐngwèn nín yào kuàngquánshuǐ háishì qìpàoshuǐ?) <br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio28').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio28" src=""></audio><br> -->
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">รับน้ำเปล่าหรือน้ำแร่แบบมีฟองไหมคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">04</div>
+                                    <div class="en">
+                                             Are you celebrating a special occasion today?<br>
+                                             🔊 (อาร์ ยู เซ-ละ-เบรท-ทิง อะ สเป-เชิล อะ-เค-เชิน ทู-เดย์)<br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio29').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio29" src="sound_eng/3/Are you celebrating a special occasion today.mp3"></audio><br> -->
+                                             今天是特别的日子吗？<br>
+                                             🔊 (Jīntiān shì tèbié de rìzi ma?) <br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio30').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio30" src=""></audio><br> -->
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">วันนี้มีโอกาสพิเศษไหมคะ/ครับ</div>
+                           </div>
+                  </div>
+
+                  <!-- Taking Orders PAGE -->
+                  <div id="Taking Orders" class="page" style="display:none">
+                           <div class="back" onclick="goHome()">← Back</div>
+                           <div class="topic-title">Taking Orders</div>
+                           <div class="topic-sub">การรับออเดอร์</div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">01</div>
+                                    <div class="en">
+                                             Are you ready to order?<br>
+                                             🔊 (อาร์ ยู เรด-ดี้ ทู ออ-เดอร์)<br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio23').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio23" src="sound_eng/3/Here is the menu..mp3"></audio><br> -->
+                                             🇨🇳 请问可以点餐了吗？<br>
+                                             🔊 (Qǐngwèn kěyǐ diǎn cān le ma?) <br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio23').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio23" src="sound_eng/3/Here is the menu..mp3"></audio><br> -->
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">พร้อมสั่งอาหารหรือยังคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">02</div>
+                                    <div class="en">
+                                             May I take your order?<br>
+                                             🔊 (เมย์ ไอ เทค ยัวร์ ออ-เดอร์)<br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio23').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio23" src="sound_eng/3/Here is the menu..mp3"></audio><br> -->
+                                             🇨🇳 我可以为您点餐吗？<br>
+                                             🔊 (Wǒ kěyǐ wèi nín diǎn cān ma?) <br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio23').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio23" src="sound_eng/3/Here is the menu..mp3"></audio><br> -->
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอรับออเดอร์ได้ไหมคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">03</div>
+                                    <div class="en">
+                                             Any allergies or dietary restrictions?<br>
+                                             🔊 (เอน-นี่ แอล-เลอ-จีส ออร์ ได-อะ-เท-อะ-รี่ รีส-ทริค-ชั่นส์)<br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio23').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio23" src="sound_eng/3/Here is the menu..mp3"></audio><br> -->
+                                             🇨🇳 请问您有食物过敏或饮食要求吗？<br>
+                                             🔊 (Qǐngwèn nín yǒu shíwù guòmǐn huò yǐnshí yāoqiú ma?) <br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio23').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio23" src="sound_eng/3/Here is the menu..mp3"></audio><br> -->
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">มีอาหารที่แพ้ไหมคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">04</div>
+                                    <div class="en">
+                                             Let me repeat your order.<br>
+                                             🔊 (เล็ท มี รี-พีท ยัวร์ ออ-เดอร์)<br><!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio23').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio23" src="sound_eng/3/Here is the menu..mp3"></audio><br> -->
+                                             🇨🇳 我帮您重复一下订单。<br>
+                                             🔊 (Wǒ bāng nín chóngfù yíxià dìngdān.) <br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio23').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio23" src="sound_eng/3/Here is the menu..mp3"></audio><br> -->
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอทวนรายการอาหารนะคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">05</div>
+                                    <div class="en">
+                                             Your food will be served shortly.<br>
+                                             🔊 (ยัวร์ ฟู้ด วิล บี เซิร์ฟด์ ชอร์ท-ลี่)<br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio23').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio23" src="sound_eng/3/Here is the menu..mp3"></audio><br> -->
+                                             🇨🇳 您的餐点马上为您送上。<br>
+                                             🔊 (Nín de cāndiǎn mǎshàng wèi nín sòng shàng.) <br>
+                                             <!-- ไฟล์เสียง -->
+                                             <!-- <button onclick="document.getElementById('audio23').play()">🔊
+                                                      ฟังเสียง</button>
+                                             <audio id="audio23" src="sound_eng/3/Here is the menu..mp3"></audio><br> -->
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">อาหารจะเสิร์ฟในอีกสักครู่ค่ะ/ครับ</div>
+                           </div>
+                  </div>
+
+                  <!-- Serving Food & Drinks PAGE -->
+                  <div id="Serving Food & Drinks" class="page" style="display:none">
+                           <div class="back" onclick="goHome()">← Back</div>
+                           <div class="topic-title">Serving Food & Drinks</div>
+                           <div class="topic-sub">เสิร์ฟอาหาร</div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">01</div>
+                                    <div class="en">
+                                             Allow me to serve your Marriott Burger.<br>
+                                             🔊 (อะ-เลา มี ทู เซิร์ฟ ยัวร์ แมริ-ออท เบอร์-เกอร์)<br>
+                                             🇨🇳 请让我为您上 Marriott 汉堡。<br>
+                                             🔊 (Qǐng ràng wǒ wèi nín shàng Marriott hànbǎo.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขออนุญาตเสิร์ฟ Marriott Burger ค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">02</div>
+                                    <div class="en">
+                                             Enjoy your meal.<br>
+                                             🔊 (เอนจอย ยัวร์ มีล)<br>
+                                             🇨🇳 请慢用。<br>
+                                             🔊 (Qǐng màn yòng.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอให้รับประทานให้อร่อยค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">03</div>
+                                    <div class="en">
+                                             Be careful, the plate is hot.<br>
+                                             🔊 (บี แคร์-ฟูล เดอะ เพลท อิส ฮอท)<br>
+                                             🇨🇳 小心，盘子很热。<br>
+                                             🔊 (Xiǎoxīn, pánzi hěn rè.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ระวังจานร้อนค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">04</div>
+                                    <div class="en">
+                                             May I clear the table?<br>
+                                             🔊 (เมย์ ไอ เคลียร์ เดอะ เท-เบิล)<br>
+                                             🇨🇳 我可以帮您收盘吗？<br>
+                                             🔊 (Wǒ kěyǐ bāng nín shōu pán ma?)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขออนุญาตเก็บจานค่ะ/ครับ</div>
+                           </div>
+                  </div>
+
+                  <!-- Billing & Payment PAGE -->
+                  <div id="Billing & Payment" class="page" style="display:none">
+                           <div class="back" onclick="goHome()">← Back</div>
+                           <div class="topic-title">Billing & Payment</div>
+                           <div class="topic-sub">คิดเงิน</div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">01</div>
+                                    <div class="en">
+                                             Would you like the bill?<br>
+                                             🔊 (วูด ยู ไลค์ เดอะ บิล)<br>
+                                             🇨🇳 请问需要买单吗？<br>
+                                             🔊 (Qǐngwèn xūyào mǎidān ma?)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ต้องการเช็คบิลไหมคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">02</div>
+                                    <div class="en">
+                                             How would you like to pay?<br>
+                                             🔊 (ฮาว วูด ยู ไลค์ ทู เพย์)<br>
+                                             🇨🇳 请问您怎么付款？<br>
+                                             🔊 (Qǐngwèn nín zěnme fùkuǎn?)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">จะชำระเงินแบบไหนคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">03</div>
+                                    <div class="en">
+                                             Please sign here.<br>
+                                             🔊 (พลีส ไซน์ เฮียร์)<br>
+                                             🇨🇳 请在这里签名。<br>
+                                             🔊 (Qǐng zài zhèlǐ qiānmíng.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">กรุณาเซ็นชื่อที่นี่ค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">04</div>
+                                    <div class="en">
+                                             Thank you very much. We hope to see you again.<br>
+                                             🔊 (แธงค์ ยู เวอรี่ มัช วี โฮป ทู ซี ยู อะ-เกน)<br>
+                                             🇨🇳 非常感谢，期待再次见到您。<br>
+                                             🔊 (Fēicháng gǎnxiè, qīdài zàicì jiàndào nín.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอบคุณมากค่ะ/ครับ หวังว่าจะได้ต้อนรับอีกครั้ง</div>
+                           </div>
+                  </div>
+         </div>
+
+         <script>
+                  function openPage(id) {
+                           // ซ่อนทุกหน้า
+                           document.querySelectorAll('#home, .page').forEach(p => {
+                                    p.style.display = 'none';
+                           });
+
+                           // แสดงหน้าที่เลือก
+                           document.getElementById(id).style.display = 'block';
+                  }
+
+                  function goHome() {
+                           // ซ่อนทุกหน้า
+                           document.querySelectorAll('.page').forEach(p => {
+                                    p.style.display = 'none';
+                           });
+
+                           // แสดงหน้า home
+                           document.getElementById('home').style.display = 'block';
+                  }
+
+                  function toggle(el) {
+                           el.classList.toggle('active');
+                  }
+         </script>
+
+</body>
+
+</html>
