@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Hotel English – Staff Training</title>
+
+         <style>
+                  * {
+                           box-sizing: border-box
+                  }
+
+                  body {
+                           margin: 0;
+                           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+                           background:
+                                    radial-gradient(circle at top left, rgba(255, 255, 255, .08), transparent 40%),
+                                    radial-gradient(circle at bottom right, rgba(0, 0, 0, .15), transparent 40%),
+                                    linear-gradient(180deg, #2788ab, #606c6f);
+                  }
+
+                  /* HEADER */
+                  .header {
+                           padding: 38px 22px 34px;
+                           color: #ffffff;
+                           background:
+                                    linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, 0));
+                  }
+
+                  .header h1 {
+                           margin: 0;
+                           font-size: 30px;
+                           font-weight: 700;
+                  }
+
+                  .header h1::after {
+                           content: "";
+                           display: block;
+                           width: 200px;
+                           height: 4px;
+                           background: #C9A24D;
+                           border-radius: 2px;
+                           margin-top: 10px;
+                  }
+
+                  .header p {
+                           margin: 6px 0 0;
+                           font-size: 14px;
+                           opacity: .9;
+                  }
+
+                  /* CONTENT */
+                  .content::before {
+                           content: "";
+                           display: block;
+                           width: 60px;
+                           height: 6px;
+                           background: #c1bfbf;
+                           border-radius: 3px;
+                           margin: 0 auto 14px;
+                  }
+
+                  .content {
+                           background: #ffffff;
+                           border-radius: 30px 30px 0 0;
+                           padding: 22px;
+                           min-height: 100vh;
+                  }
+
+                  /* MENU */
+                  .menu {
+                           background: linear-gradient(180deg, #ffffff, #F9F9F6);
+                           border-radius: 22px;
+                           padding: 20px;
+                           margin-bottom: 14px;
+                           font-size: 17px;
+                           font-weight: 600;
+                           color: #1F3D2B;
+                           box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+                           display: flex;
+                           justify-content: space-between;
+                           align-items: center;
+                  }
+
+                  .menu::after {
+                           content: "›";
+                           font-size: 22px;
+                           color: #C9A24D;
+                  }
+
+                  .menu:active {
+                           transform: scale(.97)
+                  }
+
+                  /* BACK */
+                  .back {
+                           color: #1F6F8B;
+                           font-weight: 500;
+                           margin-bottom: 12px;
+                  }
+
+                  /* TOPIC */
+                  .topic-title {
+                           font-size: 22px;
+                           font-weight: 700;
+                           color: #1F3D2B;
+                  }
+
+                  .topic-sub {
+                           font-size: 14px;
+                           color: #666;
+                           margin-bottom: 16px;
+                  }
+
+                  /* CARD */
+                  .card {
+                           background:
+                                    linear-gradient(180deg, #ffffff, #FAFAF7);
+                           border-radius: 22px;
+                           padding: 18px;
+                           margin-bottom: 14px;
+                           box-shadow: 0 8px 18px rgba(0, 0, 0, .1);
+                           transition: .25s;
+                  }
+
+                  /* NUMBER */
+                  .num {
+                           width: 32px;
+                           height: 32px;
+                           border-radius: 50%;
+                           background: #C9A24D;
+                           color: #ffffff;
+                           display: flex;
+                           align-items: center;
+                           justify-content: center;
+                           font-weight: 700;
+                           font-size: 14px;
+                  }
+
+                  /* TEXT */
+                  .en {
+                           margin-top: 10px;
+                           font-size: 16px;
+                           font-weight: 600;
+                           color: #1F3D2B;
+                  }
+
+                  .hr {
+                           height: 1px;
+                           background: #E0E0E0;
+                           margin: 10px 0;
+                  }
+
+                  .th {
+                           font-size: 15px;
+                           color: #333333;
+                  }
+         </style>
+</head>
+
+<body>
+
+         <div class="header">
+                  <h1>Hotel English</h1>
+                  <p>Staff Training</p>
+         </div>
+
+         <div class="content">
+
+                  <!-- HOME -->
+                  <div id="home">
+                           <div class="menu" onclick="openPage('Welcoming Guests')">Welcoming Guests</div>
+                           <div class="menu" onclick="openPage('Seating the Guests')">Seating the Guests</div>
+                           <div class="menu" onclick="openPage('Beginning Service')">Beginning Service</div>
+                           <div class="menu" onclick="openPage('Taking Orders')">Taking Orders</div>
+                           <div class="menu" onclick="openPage('Serving Food & Drinks')">Serving Food & Drinks</div>
+                           <div class="menu" onclick="openPage('Billing & Payment')">Billing & Payment</div>
+                  </div>
+
+                  <!-- Welcoming Guests PAGE -->
+                  <div id="Welcoming Guests" class="page" style="display:none">
+                           <div class="back" onclick="goHome()">← Back</div>
+                           <div class="topic-title">Welcoming Guests</div>
+                           <div class="topic-sub">การต้อนรับ</div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">01</div>
+                                    <div class="en">Good morning afternoon evening. Welcome to our restaurant.<br>
+                                             🔊 (กู๊ด มอร์-นิ่ง / อาฟ-เทอะ-นูน / อีฟ-นิ่ง เวล-คัม ทู อาว
+                                             เรส-เทอ-รอง)<br>
+
+                                             🇨🇳 早上好 下午好 晚上好，欢迎来到我们的餐厅。<br>
+                                             🔊 (Zǎoshang hǎo / Xiàwǔ hǎo / Wǎnshàng hǎo, huānyíng láidào wǒmen de
+                                             cāntīng.) <br>
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">สวัสดีค่ะ/ครับ ยินดีต้อนรับสู่ห้องอาหารของเรา</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">02</div>
+                                    <div class="en">
+                                             It’s a pleasure to have you with us today.<br>
+                                             🔊 (อิทส์ อะ เพล-เชอะ ทู แฮฟ ยู วิธ อัส ทู-เดย์)<br>
+                                             🇨🇳 今天很高兴为您服务。<br>
+                                             🔊 (Jīntiān hěn gāoxìng wèi nín fúwù.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">วันนี้ยินดีเป็นอย่างยิ่งที่ได้ให้บริการท่านค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">03</div>
+                                    <div class="en">
+                                             Welcome back. We’re delighted to see you again.<br>
+                                             🔊 (เวล-คัม แบ็ค วีร์ ดิ-ไล-ทิด ทู ซี ยู อะ-เกน)<br>
+                                             🇨🇳 欢迎回来，我们很高兴再次见到您。<br>
+                                             🔊 (Huānyíng huílái, wǒmen hěn gāoxìng zàicì jiàn dào nín.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ยินดีต้อนรับกลับค่ะ/ครับ ทางเราดีใจอย่างยิ่งที่ได้พบคุณอีกครั้ง
+                                    </div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">04</div>
+                                    <div class="en">
+                                             Thank you for choosing to dine with us.<br>
+                                             🔊 (แธงค์-ยู ฟอร์ ชูส-ซิ่ง ทู ไดน์ วิธ อัส)<br>
+                                             🇨🇳 感谢您选择在我们餐厅用餐。<br>
+                                             🔊 (Gǎnxiè nín xuǎnzé zài wǒmen cāntīng yòngcān.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอขอบพระคุณที่เลือกใช้บริการห้องอาหารของเราค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">05</div>
+                                    <div class="en">
+                                             Do you have a reservation?<br>
+                                             🔊 (ดู ยู แฮฟ อะ เร-เซอ-เว-ชั่น?)<br>
+                                             🇨🇳 请问您有预订吗？<br>
+                                             🔊 (Qǐngwèn nín yǒu yùdìng ma?)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอเรียนสอบถามว่าท่านได้ทำการจองไว้หรือไม่คะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">06</div>
+                                    <div class="en">
+                                             May I have your name for the reservation?<br>
+                                             🔊 (เมย์ ไอ แฮฟ ยัวร์ เนม ฟอร์ เดอะ เร-เซอ-เว-ชั่น?)<br>
+                                             🇨🇳 请问预订的姓名是？<br>
+                                             🔊 (Qǐngwèn yùdìng de xìngmíng shì?)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอความกรุณาทราบชื่อที่ใช้สำหรับการจองค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">07</div>
+                                    <div class="en">
+                                             Let me check your reservation.<br>
+                                             🔊 (เลท มี เช็ค ยัวร์ เร-เซอ-เว-ชั่น)<br>
+                                             🇨🇳 请稍等，我帮您查询一下预订。<br>
+                                             🔊 (Qǐng shāoděng, wǒ bāng nín cháxún yíxià yùdìng.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">กรุณารอสักครู่นะคะ/ครับ ดิฉัน/ผมจะตรวจสอบการจองให้ค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">08</div>
+                                    <div class="en">
+                                             I’m sorry, we don’t seem to have a reservation under that name.<br>
+                                             🔊 (ไอม์ ซอ-รี วี โดนท์ ซีม ทู แฮฟ อะ เร-เซอ-เว-ชั่น อัน-เดอร์ แดท เนม)<br>
+                                             🇨🇳 抱歉，我们没有查到这个名字的预订。<br>
+                                             🔊 (Bàoqiàn, wǒmen méiyǒu chá dào zhège míngzì de yùdìng.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขออภัยเป็นอย่างยิ่งค่ะ/ครับ ไม่พบรายการจองภายใต้ชื่อนี้ค่ะ/ครับ
+                                    </div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">09</div>
+                                    <div class="en">
+                                             At the moment, all our tables are fully occupied. Would you be comfortable
+                                             waiting?<br>
+                                             🔊 (แอท เดอะ โม-เมนท์ ออล อาว เท-เบิลส์ อาร์ ฟูล-ลี ออค-คิว-พายด์ วูด ยู บี
+                                             คัม-ฟอร์-เท-เบิล เวท-ทิ่ง?)<br>
+                                             🇨🇳 目前所有座位都已满，大约需要等20分钟，请问您方便等候吗？<br>
+                                             🔊 (Mùqián suǒyǒu zuòwèi dōu yǐ mǎn, dàyuē xūyào děng èrshí fēnzhōng,
+                                             qǐngwèn nín fāngbiàn děnghòu ma?)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขณะนี้ที่นั่งเต็มทั้งหมดค่ะ/ครับ อาจต้องรอประมาณ 20 นาที
+                                             ไม่ทราบว่าสะดวกรอหรือไม่คะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">10</div>
+                                    <div class="en">
+                                             At the moment, all our tables are fully occupied. Would you be comfortable
+                                             waiting?<br>
+                                             🔊 (แอท เดอะ โม-เมนท์ ออล อาว เท-เบิลส์ อาร์ ฟูล-ลี ออค-คิว-พายด์ วูด ยู บี
+                                             คัม-ฟอร์-เท-เบิล เวท-ทิ่ง?)<br>
+                                             🇨🇳 目前所有座位都已满，大约需要等20分钟，请问您方便等候吗？<br>
+                                             🔊 (Mùqián suǒyǒu zuòwèi dōu yǐ mǎn, dàyuē xūyào děng èrshí fēnzhōng,
+                                             qǐngwèn nín fāngbiàn děnghòu ma?)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขณะนี้ที่นั่งเต็มทั้งหมดค่ะ/ครับ อาจต้องรอประมาณ 20 นาที
+                                             ไม่ทราบว่าสะดวกรอหรือไม่คะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">11</div>
+                                    <div class="en">
+                                             The waiting time is approximately 15–20 minutes.<br>
+                                             🔊 (เดอะ เวท-ทิ่ง ไทม์ อิส อะ-พร็อก-ซิ-เมท-ลี่ ฟิฟ-ทีน ทู ทเวน-ที
+                                             มิ-นิทส์)<br>
+                                             🇨🇳 等候时间大约15到20分钟。<br>
+                                             🔊 (Děnghòu shíjiān dàyuē shíwǔ dào èrshí fēnzhōng.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ระยะเวลารอประมาณ 15–20 นาทีค่ะ/ครับ</div>
+                           </div>
+                  </div>
+
+                  <!-- Seating the Guests PAGE -->
+                  <div id="Seating the Guests" class="page" style="display:none">
+                           <div class="back" onclick="goHome()">← Back</div>
+                           <div class="topic-title">Seating the Guests</div>
+                           <div class="topic-sub">การพาไปที่โต๊ะ</div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">01</div>
+                                    <div class="en">
+                                             This way, please.<br>
+                                             🔊 (ดิส เวย์ พล-ลีซ)<br>
+                                             🇨🇳 请这边走。<br>
+                                             🔊 (Qǐng zhè biān zǒu.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">เชิญทางนี้ค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">02</div>
+                                    <div class="en">
+                                             I’ll take you to your table.<br>
+                                             🔊 (อายล์ เทค ยู ทู ยัวร์ เท-เบิล)<br>
+                                             🇨🇳 我带您到座位。<br>
+                                             🔊 (Wǒ dài nín dào zuòwèi.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ดิฉัน/ผมจะพาท่านไปยังโต๊ะค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">03</div>
+                                    <div class="en">
+                                             Please watch your step.<br>
+                                             🔊 (พลีซ วอทช์ ยัวร์ สเต็ป)<br>
+                                             🇨🇳 请小心台阶。<br>
+                                             🔊 (Qǐng xiǎoxīn táijiē.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">กรุณาระมัดระวังขั้นบันไดค่ะ/ครับ</div>
+
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">04</div>
+                                    <div class="en">
+                                             Here is your table.<br>
+                                             🔊 (เฮียร์ อิส ยัวร์ เท-เบิล)<br>
+                                             🇨🇳 这是您的座位。<br>
+                                             🔊 (Zhè shì nín de zuòwèi.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">นี่คือโต๊ะของท่านค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">05</div>
+                                    <div class="en">
+                                             How many guests are in your party?<br>
+                                             🔊 (ฮาว เม-นี่ เกสท์ส อาร์ อิน ยัวร์ พาร์-ที?)<br>
+                                             🇨🇳 请问一共几位？<br>
+                                             🔊 (Qǐngwèn yígòng jǐ wèi?)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ไม่ทราบว่ามากันทั้งหมดกี่ท่านคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">06</div>
+                                    <div class="en">
+                                             Would you prefer a table indoors or outdoors?<br>
+                                             🔊 (วูด ยู พรี-เฟอร์ อะ เท-เบิล อิน-ดอร์ส ออร์ เอาท์-ดอร์ส?)<br>
+                                             🇨🇳 您喜欢室内还是室外的座位？<br>
+                                             🔊 (Nín xǐhuān shìnèi háishì shìwài de zuòwèi?)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ท่านประสงค์จะนั่งด้านในหรือด้านนอกคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">07</div>
+                                    <div class="en">
+                                             Please have a seat.<br>
+                                             🔊 (พลีซ แฮฟ อะ ซีท)<br>
+                                             🇨🇳 请坐。<br>
+                                             🔊 (Qǐng zuò.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">เชิญนั่งค่ะ/ครับ</div>
+                           </div>
+                  </div>
+
+                  <!-- Beginning Service PAGE -->
+                  <div id="Beginning Service" class="page" style="display:none">
+                           <div class="back" onclick="goHome()">← Back</div>
+                           <div class="topic-title">Beginning Service</div>
+                           <div class="topic-sub">เริ่มต้นบริการที่โต๊ะ</div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">01</div>
+                                    <div class="en">
+                                             Here is the menu.<br>
+                                             🔊 (เฮียร์ อิส เดอะ เมน-ยู)<br>
+                                             🇨🇳 这是菜单。<br>
+                                             🔊 (Zhè shì càidān.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">นี่คือเมนูค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">02</div>
+                                    <div class="en">
+                                             Allow me to introduce our special menu for today.<br>
+                                             🔊 (อะ-เลา มี ทู อิน-โทร-ดิวซ อาวร์ สเป-เชิล เมน-ยู ฟอร์ ทู-เดย์)<br>
+                                             🇨🇳 请允许我为您介绍今天的特色菜。<br>
+                                             🔊 (Qǐng yǔnxǔ wǒ wèi nín jièshào jīntiān de tèsè cài.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขออนุญาตแนะนำเมนูพิเศษประจำวันนี้ค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">03</div>
+                                    <div class="en">
+                                             Would you like still or sparkling water?<br>
+                                             🔊 (วูด ยู ไลค์ สทิล ออร์ สปาร์ค-ลิ่ง วอ-เทอร์?)<br>
+                                             🇨🇳 请问您要矿泉水还是气泡水？<br>
+                                             🔊 (Qǐngwèn nín yào kuàngquán shuǐ háishì qìpào shuǐ?)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ท่านรับน้ำเปล่าหรือน้ำแร่แบบมีฟองคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">04</div>
+                                    <div class="en">
+                                             Please let me know if you need anything.<br>
+                                             🔊 (พลีซ เลท มี โนว์ อิฟ ยู นีด เอน-นี่-ธิง)<br>
+                                             🇨🇳 如果需要帮助，请告诉我。<br>
+                                             🔊 (Rúguǒ xūyào bāngzhù, qǐng gàosù wǒ.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">หากต้องการความช่วยเหลือ กรุณาแจ้งได้เลยค่ะ/ครับ</div>
+                           </div>
+                  </div>
+
+                  <!-- Taking Orders PAGE -->
+                  <div id="Taking Orders" class="page" style="display:none">
+                           <div class="back" onclick="goHome()">← Back</div>
+                           <div class="topic-title">Taking Orders</div>
+                           <div class="topic-sub">การรับออเดอร์</div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">01</div>
+                                    <div class="en">
+                                             Are you ready to order?<br>
+                                             🔊 (อาร์ ยู เร-ดี้ ทู ออร์-เดอร์?)<br>
+                                             🇨🇳 您准备好点餐了吗？<br>
+                                             🔊 (Nín zhǔnbèi hǎo diǎn cān le ma?)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ท่านพร้อมสั่งอาหารหรือยังคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">02</div>
+                                    <div class="en">
+                                             May I take your order?<br>
+                                             🔊 (เมย์ อาย เทค ยัวร์ ออร์-เดอร์?)<br>
+                                             🇨🇳 我可以为您点餐吗？<br>
+                                             🔊 (Wǒ kěyǐ wèi nín diǎn cān ma?)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขออนุญาตรับรายการอาหารค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">03</div>
+                                    <div class="en">
+                                             Any allergies or dietary restrictions?<br>
+                                             🔊 (เอน-นี่ แอล-เลอร์-จีส์ ออร์ ได-เอ็ท-เทอ-รี่ รี-สทริค-ชันส์?)<br>
+                                             🇨🇳 请问您有食物过敏或饮食限制吗？<br>
+                                             🔊 (Qǐngwèn nín yǒu shíwù guòmǐn huò yǐnshí xiànzhì ma?)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ไม่ทราบว่าท่านมีอาการแพ้อาหารหรือข้อจำกัดด้านอาหารหรือไม่คะ/ครับ
+                                    </div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">04</div>
+                                    <div class="en">
+                                             Thank you. Please enjoy your meal.<br>
+                                             🔊 (แธงค์ ยู พลีซ เอน-จอย ยัวร์ มีล)<br>
+                                             🇨🇳 谢谢，请慢用。<br>
+                                             🔊 (Xièxie, qǐng màn yòng.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอบคุณค่ะ/ครับ ขอให้รับประทานให้อร่อยค่ะ/ครับ</div>
+                           </div>
+                  </div>
+
+                  <!-- Serving Food & Drinks PAGE -->
+                  <div id="Serving Food & Drinks" class="page" style="display:none">
+                           <div class="back" onclick="goHome()">← Back</div>
+                           <div class="topic-title">Serving Food & Drinks</div>
+                           <div class="topic-sub">เสิร์ฟอาหาร</div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">01</div>
+                                    <div class="en">
+                                             Here is your order.<br>
+                                             🔊 (เฮียร์ อิส ยัวร์ ออร์-เดอร์)<br>
+                                             🇨🇳 这是您的餐点。<br>
+                                             🔊 (Zhè shì nín de cāndiǎn.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">นี่คืออาหารของท่านค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">02</div>
+                                    <div class="en">
+                                             Enjoy your meal.<br>
+                                             🔊 (เอน-จอย ยัวร์ มีล)<br>
+                                             🇨🇳 祝您用餐愉快。<br>
+                                             🔊 (Zhù nín yòngcān yúkuài.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขอให้ท่านรับประทานอย่างมีความสุขค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">03</div>
+                                    <div class="en">
+                                             Is everything okay?<br>
+                                             🔊 (อิส เอฟ-วรี่-ธิง โอ-เค?)<br>
+                                             🇨🇳 一切都满意吗？<br>
+                                             🔊 (Yíqiè dōu mǎnyì ma?)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ทุกอย่างเรียบร้อยดีไหมคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">04</div>
+                                    <div class="en">
+                                             May I clear the table?<br>
+                                             🔊 (เมย์ อาย เคลียร์ เดอะ เท-เบิล?)<br>
+                                             🇨🇳 我可以收盘子吗？<br>
+                                             🔊 (Wǒ kěyǐ shōu pánzi ma?)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ขออนุญาตเก็บจานค่ะ/ครับ</div>
+                           </div>
+                  </div>
+
+                  <!-- Billing & Payment PAGE -->
+                  <div id="Billing & Payment" class="page" style="display:none">
+                           <div class="back" onclick="goHome()">← Back</div>
+                           <div class="topic-title">Billing & Payment</div>
+                           <div class="topic-sub">คิดเงิน</div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">01</div>
+                                    <div class="en">
+                                             Would you like the bill?<br>
+                                             🔊 (วูด ยู ไลค์ เดอะ บิล?)<br>
+                                             🇨🇳 请问需要买单吗？<br>
+                                             🔊 (Qǐngwèn xūyào mǎidān ma?)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ไม่ทราบว่าต้องการเช็คบิลหรือไม่คะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">02</div>
+                                    <div class="en">
+                                             How would you like to pay?<br>
+                                             🔊 (ฮาว วูด ยู ไลค์ ทู เพย์?)<br>
+                                             🇨🇳 请问您想如何付款？<br>
+                                             🔊 (Qǐngwèn nín xiǎng rúhé fùkuǎn?)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">ท่านประสงค์จะชำระเงินด้วยวิธีใดคะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">03</div>
+                                    <div class="en">
+                                             Please sign here.<br>
+                                             🔊 (พลีซ ไซน์ เฮียร์)<br>
+                                             🇨🇳 请在这里签名。<br>
+                                             🔊 (Qǐng zài zhèlǐ qiānmíng.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">กรุณาเซ็นชื่อบริเวณนี้ค่ะ/ครับ</div>
+                           </div>
+
+                           <div class="card" onclick="toggle(this)">
+                                    <div class="num">04</div>  
+                                    <div class="en">
+                                             We hope to see you again.<br>
+                                             🔊 (วี โฮป ทู ซี ยู อะ-เกน)<br>
+                                             🇨🇳 期待再次为您服务。<br>
+                                             🔊 (Qīdài zàicì wèi nín fúwù.)
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="th">
+                                             หวังเป็นอย่างยิ่งว่าจะได้มีโอกาสต้อนรับและให้บริการท่านอีกครั้งค่ะ/ครับ
+                                    </div>
+                           </div>
+                  </div>
+         </div>
+
+         <script>
+                  function openPage(id) {
+                           // ซ่อนทุกหน้า
+                           document.querySelectorAll('#home, .page').forEach(p => {
+                                    p.style.display = 'none';
+                           });
+
+                           // แสดงหน้าที่เลือก
+                           document.getElementById(id).style.display = 'block';
+                  }
+
+                  function goHome() {
+                           // ซ่อนทุกหน้า
+                           document.querySelectorAll('.page').forEach(p => {
+                                    p.style.display = 'none';
+                           });
+
+                           // แสดงหน้า home
+                           document.getElementById('home').style.display = 'block';
+                  }
+
+                  function toggle(el) {
+                           el.classList.toggle('active');
+                  }
+         </script>
+
+</body>
+
+</html>
